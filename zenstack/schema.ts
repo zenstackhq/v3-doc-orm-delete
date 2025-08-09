@@ -68,13 +68,20 @@ export const schema = {
                 },
                 content: {
                     name: "content",
-                    type: "String"
+                    type: "String",
+                    optional: true
                 },
                 published: {
                     name: "published",
                     type: "Boolean",
                     attributes: [{ name: "@default", args: [{ name: "value", value: ExpressionUtils.literal(false) }] }],
                     default: false
+                },
+                viewCount: {
+                    name: "viewCount",
+                    type: "Int",
+                    attributes: [{ name: "@default", args: [{ name: "value", value: ExpressionUtils.literal(0) }] }],
+                    default: 0
                 },
                 author: {
                     name: "author",
