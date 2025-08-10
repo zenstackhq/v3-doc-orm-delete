@@ -71,6 +71,13 @@ export const schema = {
                     type: "String",
                     optional: true
                 },
+                slug: {
+                    name: "slug",
+                    type: "String",
+                    unique: true,
+                    optional: true,
+                    attributes: [{ name: "@unique" }]
+                },
                 published: {
                     name: "published",
                     type: "Boolean",
@@ -101,7 +108,8 @@ export const schema = {
             },
             idFields: ["id"],
             uniqueFields: {
-                id: { type: "Int" }
+                id: { type: "Int" },
+                slug: { type: "String" }
             }
         }
     },
